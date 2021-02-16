@@ -10,34 +10,16 @@ public class Main {
 
         System.out.println("My lucky number is.: " + myLuckyNumber);
 
-        boolean wholeNumber = false;
-        if (number == Math.floor(number)) {
-            wholeNumber = true;
-            System.out.println("Number is whole.: " + wholeNumber);
-        } else {
-            System.out.println("Number is whole.: " + wholeNumber);
-        }
+        boolean wholeNumber = number == Math.floor(number);
+        System.out.println("Number is whole.: " + wholeNumber);
 
-        boolean round = false;
-        if (number % 2 == 0) {
-            round = true;
-            System.out.println("Number is even.: " + round);
-        } else {
-            System.out.println("Number is even.: " + round + " Your number is odd!");
-        }
+        boolean round = number == Math.round(number / 10.0) * 10;
+        System.out.println("Number is Round.: " + round);
 
-        if (number == myLuckyNumber) {
-            System.out.println("Is my lucky number!");
-        } else {
-            System.out.println("Is not my lucky number!");
-        }
+        boolean myLucky = number == 29;
+        System.out.println("My Lucky number is.: " + myLucky);
 
-        boolean doubleDigit = false;
-        if (number > 9 && number < 100) {
-            doubleDigit = true;
-            System.out.println("Double digit.: " + doubleDigit);
-        } else {
-            System.out.println("Double digit.: " + doubleDigit);
-        }
+        boolean doubleDigit = (number > 9 && number < 100) || (number < -9 && number > -100);
+        System.out.println("Double digit.: " + doubleDigit);
     }
 }
